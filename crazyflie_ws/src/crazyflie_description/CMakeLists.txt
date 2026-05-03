@@ -26,4 +26,14 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}/
 )
 
+# Install entire scripts directory (if all .py files are executables)
+ install(DIRECTORY
+   scripts
+   DESTINATION lib/${PROJECT_NAME}
+   USE_SOURCE_PERMISSIONS
+   PATTERN "*.py" PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ
+ )
+
+
+
 ament_package()
