@@ -11,9 +11,9 @@ import time
 class SimpleSquare(Node):
     def __init__(self):
         super().__init__('simple_square')
-        self.publisher = self.create_publisher(Twist, '/cmd_vel', 10)
+        # self.publisher = self.create_publisher(Twist, '/cmd_vel', 10)
         # dra - 03/05/2026 - added this line: publishing clean data, the noisy data will be published to /cmd_vel from script noise_node
-        # self.publisher = self.create_publisher(Twist, '/clean_cmd_vel', 10)
+        self.publisher = self.create_publisher(Twist, '/clean_cmd_vel', 10)
         self.speed = 0.5  # Default movement speed
         self.height = 1.5
     
