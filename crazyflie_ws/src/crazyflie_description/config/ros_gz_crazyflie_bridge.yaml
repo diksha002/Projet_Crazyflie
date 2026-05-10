@@ -8,3 +8,17 @@
   gz_topic_name: "/clock"
   ros_type_name: "rosgraph_msgs/msg/Clock"
   gz_type_name: "gz.msgs.Clock"
+
+# 1. CRAZYFLIE ODOMETRY (position + velocity)
+- ros_topic_name: "/crazyflie/odometry"
+  gz_topic_name: "/model/crazyflie/odometry"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "gz.msgs.Odometry"
+  direction: GZ_TO_ROS
+
+# 2. CRAZYFLIE POSE (just position and orientation)
+- ros_topic_name: "/crazyflie/pose"
+  gz_topic_name: "/model/crazyflie/pose"
+  ros_type_name: "geometry_msgs/msg/PoseArray"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
